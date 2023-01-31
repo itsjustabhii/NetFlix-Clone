@@ -7,10 +7,8 @@ export default function Signup() {
   return (
     <Container>
         <BackgroundImage/>
-        <div className="content">
-
-        
-        <Header/>
+        <div className="content">        
+        <Header login/>
         <div className="body flex column a-center j-center">
             <div className="text flex column">
                 <h1>Unlimited Movies, TV Shows and More</h1>
