@@ -31,7 +31,7 @@ export default function Login() {
         <BackgroundImage/>
         <div className="content">
             <Header/>
-            <div className="form-container flex-column a-center j-center">
+            <div className="form-container flex column a-center j-center">
                 <div clasName="form flex-column a-center j-center">
                     <div className="title">
                         <h3>Login</h3>
