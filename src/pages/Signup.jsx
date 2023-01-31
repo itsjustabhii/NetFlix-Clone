@@ -5,6 +5,15 @@ import Header from '../components/Header'
 
 export default function Signup() {
     const [showPassword, setShowPassword] = useState(false)
+    const [formValues, setFormValues] = useState({
+        email: "",
+        password: "",
+    })
+
+    const handleSignIn = async () => {
+        console.log(formValues)
+    }
+
   return (
     <Container showPassword={showPassword}>
         <BackgroundImage/>
@@ -17,10 +26,10 @@ export default function Signup() {
                 <h6>Read to watch? Enter your email to create or restart subscription</h6>
             </div>
             <div className="form">
-                <input type="email" placeholder='Email Address' name="email"  />
+                <input type="email" placeholder='Email Address' name="email" value={formValues.email} onChange={(e)=>setFormValues({...formValues, [e.target.name]:e.target.value})} />
                 {
                     showPassword && (
-                        <input type="password" placeholder='Password' name='password' />
+                        <input type="password" placeholder='Password' name='password' value={formValues.password} onChange={(e)=>setFormValues({...formValues, [e.target.name]:e.target.value})} />
                     )
                 }
                 
@@ -29,7 +38,7 @@ export default function Signup() {
                 }
                 
             </div>
-            <button>Log In</button>
+            <button onClick={handleSignIn}>Sign Up</button>
         </div>
         </div>
     </Container>
@@ -59,7 +68,7 @@ position: relative;
         }
         .form {
             display: grid;
-            // grid-template-columns: ;
+            grid-template-columns:${({showPassword})=> showPassword ? "1fr 1fr" : "2fr 1fr"} ;
             width: 60%;
             input {
                 color:black;
