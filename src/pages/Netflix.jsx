@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Navbar from "../components/Navbar"
+import Slider from "../components/Navbar"
 import backgroundImage from "../assets/home.jpg"
 import MovieLogo from "../assets/homeTitle.webp"
 import {FaPlay} from "react-icons/fa"
@@ -48,6 +49,7 @@ export default function Netflix() {
         </div>
       </div>
     </div>
+    <Slider movies={movies}/>
     </Container>
   )
 }
